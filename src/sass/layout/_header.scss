@@ -1,0 +1,91 @@
+.header {
+    height:85px;
+    background:$white;
+    position: static;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    @include transition(all 1s);
+    &__logo{
+        @include sprite;
+        background-position: -40px -300px;
+        width: 61px;
+        height: 54px;
+        margin: 15px 0;
+        float:left;
+    }
+    &__menuMobile{
+        display:none;
+    }
+}
+.nav{
+    float:right;
+    &__menu{
+        float:left;
+        li{
+            float:left;
+            margin:0 20px;
+        }
+        a{
+            color:$dark-blue;
+            font-size:$base-font;
+            font-family:$font;
+            line-height:85px;
+            @include transition(all 0.3s);
+            &:hover{
+                color: #F95D0E;
+            }
+            &.active{
+                color: #F95D0E;
+                border-bottom: 2px solid #F95D0E;
+                padding-bottom: 5px;
+            }
+        }
+    }      
+}
+.userLogin{
+    float:left;
+    margin-left: 30px;
+    margin-top: 35px;
+    li{
+        float: left;
+        margin-left: 15px;
+        padding-right: 10px;
+        position:relative;
+        color:$gray;
+        &:after{
+            content:'';
+            position:absolute;
+            right: 0;
+            top: 0;
+            height: 15px;
+            width: 1px;
+            background: $gray;
+        }
+        &:last-child:after{
+            background: transparent;
+        }
+        &:last-child{
+            padding: 0;
+            margin-left: 5px;
+        }
+        a{
+            color:$gray;
+        }
+        select{
+            border:0 none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            width: 50px;
+            height:auto;
+            @include sprite;
+            background-position: -265px -15px;
+            float: left;
+            padding: 0 5px;
+            line-height: 18px;
+            margin-top: -1px;
+        }
+    }
+    
+}

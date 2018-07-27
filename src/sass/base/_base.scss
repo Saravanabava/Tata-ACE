@@ -1,0 +1,120 @@
+//Base
+@font-face {
+    font-family: $font;
+    src: url('#{$font-path}UniNeueRegular.eot');
+    src: url('#{$font-path}UniNeueRegular.woff2') format('woff2'),
+    url('#{$font-path}UniNeueRegular.woff') format('woff'),
+    url('#{$font-path}UniNeueRegular.ttf') format('truetype'),
+    url('#{$font-path}UniNeueRegular.svg#UniNeueRegular') format('svg'),
+    url('#{$font-path}UniNeueRegular.eot?#iefix') format('embedded-opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: $font-bold;
+    src: url('#{$font-path}UniNeueBold.eot');
+    src: url('#{$font-path}UniNeueBold.woff2') format('woff2'),
+    url('#{$font-path}UniNeueBold.woff') format('woff'),
+    url('#{$font-path}UniNeueBold.ttf') format('truetype'),
+    url('#{$font-path}UniNeueBold.svg#UniNeueBold') format('svg'),
+    url('#{$font-path}UniNeueBold.eot?#iefix') format('embedded-opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: $font-book;
+    src: url('#{$font-path}UniNeueBook.eot');
+    src: url('#{$font-path}UniNeueBook.woff2') format('woff2'),
+    url('#{$font-path}UniNeueBook.woff') format('woff'),
+    url('#{$font-path}UniNeueBook.ttf') format('truetype'),
+    url('#{$font-path}UniNeueBook.svg#UniNeueBook') format('svg'),
+    url('#{$font-path}UniNeueBook.eot?#iefix') format('embedded-opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+body {
+    font-family: $font;
+    font-size: $base-font;
+    line-height: 1;
+    color: $dark-blue;
+    background: $white;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0 0 15px;
+}
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+* {
+    outline: 0
+}
+
+a,
+a:focus,
+a:hover {
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+}
+.smallBtn{
+    position:absolute;
+    bottom:22px;
+    left:50%;
+    width:170px;
+    height:36px;
+    margin-left: -85px;
+    text-align: center;
+    line-height: 36px;
+    font-size:14px;
+    color:$white;
+    background:$btn-bg;
+    border-radius:4px;
+    &__txt{
+        float:left;
+        width:134px;
+    }
+    &__arrow{
+        float:right;
+        width:36px;
+        height:36px;
+        border-radius: 0px 4px 4px 0px;
+        @include sprite;
+        background-position:-455px -8px;
+    }
+    &:hover{
+        color:$white;
+    }
+}
+/*#loading {
+    top: 0;
+    left: 0;
+    background: rgba(255, 255, 255, 1);
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 999999999;
+}
+
+#loading-image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 64px;
+    height: 64px;
+    margin-top: -32px;
+    margin-left: -32px;
+    z-index: 99999999;
+}*/

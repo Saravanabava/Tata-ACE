@@ -114,7 +114,7 @@
     }
     &__buyGetFind{
         width:100%;
-        background:$buyBg;
+        background:$grayBg;
         padding: 45px 0;
         ul{
             width:100%;
@@ -148,6 +148,238 @@
             line-height:25px;
             color:$white;
             padding: 32px 5px 0 0;
+        }
+    }
+    &__traningSection{
+        padding:80px 0 0 0;
+        p{
+            font-size:18px;
+            line-height:24px;
+            text-align:center;
+            color:$dark-blue;
+            margin-bottom:38px;
+        }
+        ul{
+            width:100%;
+            margin-top:45px;
+        }
+        li{
+            float:left;
+            position:relative;
+            &:nth-child(2){
+                .home__traningContent{
+                    height:500px;
+                    width:420px;
+                }
+                img{
+                    position: absolute;
+                    bottom: 0;
+                    z-index: 1;
+                }
+                P{
+                    padding-top: 27px;
+                }
+            }
+        }
+    }
+    &__traningContent{
+        position:relative;
+        p{
+            font-size:30px;
+            line-height:35px;
+            color:$dark-blue;
+            text-align:left;
+            padding: 52px 30px 25px 30px;
+            margin-bottom: 0;
+        }
+        a{
+            position:static;
+            float: left;
+            margin-left: 30px;
+        }
+    }
+    &__downarrow, &__uparrow{
+        @include sprite;
+        background-position:-580px -300px;
+        width: 19px;
+        height: 42px;
+        position: absolute;
+        top: -18px;
+        left: 29px;
+    }
+    &__uparrow{
+        background-position:-540px -300px;
+        top: 226px;
+        left: 29px;
+    }
+    &__storiesSection{
+        background:$grayBg;
+        padding:80px 0;
+    }
+    &__customerSection{
+        width:615px;
+        margin:0 auto;
+        display:table;
+        position:relative;
+        &::after{
+            content: '';
+            position: absolute;
+            top: 50%;
+            right: -35px;
+            width: 1px;
+            height: 260px;
+            background: $gray;
+            margin-top: -130px;
+        }
+        li{
+            float:left;
+            margin:15px 32px 0 32px;
+            width:141px;
+            text-align:center;
+            position: relative;
+            cursor:pointer;
+            @include transition(all 0.5s);
+            &:hover .home__profile{
+                border:5px solid $white;
+                -webkit-filter: grayscale(0);
+                filter: grayscale(0);
+                opacity: 1;
+            }
+            &:hover .home__profile::after{
+                border: 7px solid rgba(240, 77, 70, 0.5);
+            }
+            &:hover .home__youtubeicon{
+                background-position:-680px -300px;
+            }
+            &:hover .home__customerTitle{
+                color:$red;
+            }
+            p{
+                font-size:16px;
+                line-height:22px;
+                margin-bottom:0;
+            }
+        }
+    }
+    &__profile{
+        width:141px;
+        height:141px;
+        border:5px solid transparent;
+        border-radius:100%;
+        position: relative;
+        -webkit-filter: grayscale(100%);
+        filter: grayscale(100%);
+        opacity: 0.5;
+        @include transition(all 0.5s);
+        margin-bottom:20px;
+        &::after{
+            content: '';
+            position: absolute;
+            border: 7px solid transparent;
+            width: 155px;
+            height: 155px;
+            top: -12px;
+            left: -12px;
+            border-radius: 100%;
+            @include transition(all 0.5s);
+        }
+        img{
+            border-radius:100%;
+        }
+    }
+    &__customerTitle{
+        font-family:$font-bold;
+        @include transition(all 0.5s);
+    }
+    &__youtubeicon{
+        @include sprite;
+        background-position:-620px -300px;
+        width: 37px;
+        height: 29px;
+        float:left;
+        position: absolute;
+        top: 125px;
+        left: 50%;
+        margin-left: -19px;
+        @include transition(all 0.5s);
+    }
+    &__testimonialSection{
+        margin-top:20px;
+        margin-left:45px;
+        float:left;
+        li{
+            width:345px;
+            float:left;
+            position:relative;
+        }
+    }
+    &__profileVideo{
+        margin-bottom:33px;
+    }
+    &__videoicon{
+        @include sprite;
+        background-position:-740px -300px;
+        width: 54px;
+        height: 43px;
+        float:left;
+        position: absolute;
+        top: 85px;
+        left: 50%;
+        margin-left: -27px;
+        @include transition(all 0.5s);
+    }
+    &__testimonialContent{
+        margin-left: 48px;
+        p{
+            font-size:14px;
+            line-height:19px;
+            margin-bottom:20px;
+            span{
+                font-family:$font-bold;
+                font-size:16px;
+                color:$red;
+            }
+        }
+        &::after{
+            content:'';
+            position:absolute;
+            bottom:-15px;
+            left:0;
+            @include sprite;
+            background-position:-40px -400px;
+            width: 99px;
+	        height: 88px;
+        }
+    }
+    &__driverSection{
+        background:url('#{$image-path}home/driver-section-bg.jpg') no-repeat center;
+        padding:75px 0 135px;
+        position:relative;
+        background-size: cover;
+    }
+    &__driverbg{
+        background:url('#{$image-path}home/driver-section.png') no-repeat;
+        position:absolute;
+        left:-145px;
+        top:35px;
+        width:473px;
+        height:424px;
+        z-index:1;
+    }
+    &__driverContent{
+        padding:15px 15px 40px;
+        background:$white;
+        border-radius:4px;
+        position:relative;
+        h3{
+            font-size:25px;
+            font-family:$font-bold;
+            line-height:25px;
+            margin-top:30px;
+        }
+        p{
+            font-size:14px;
+            line-height:19px;
         }
     }
 }

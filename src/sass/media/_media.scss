@@ -3,7 +3,7 @@
 }
 @media (min-width: 1200px) {
     .container {
-        width: 1180px;
+        width: 1184px;
         padding:0;
     }
 }
@@ -26,6 +26,58 @@
                 line-height: 22px;
                 padding: 20px 5px 0 0;
             }
+        }
+        &__traningSection{
+            ul{
+                width:81.3%;
+                margin:0 auto;
+                display:table;
+            }
+            li{
+                width: 100%;
+                height:250px;
+                float: left;
+                img{
+                    float:left;
+                }
+                &:nth-child(2) {
+                    height:227px;
+                    .home__traningContent{
+                        height:auto;
+                        width:382px;
+                        p{
+                            margin-left:0;
+                        }
+                        a{
+                            margin-left: 30px;
+                        }
+                    }
+                    img{
+                        right: 0;
+                        width: 382px;
+                        bottom: 0;
+                    }
+                }
+            }
+        }
+        &__traningContent{
+            float:left;
+            height:250px;
+            p{
+                margin-left: 30px;
+            }
+            a{
+                margin-left:60px;
+            }
+        }
+        &__downarrow, &__uparrow{
+            top: 45px;
+            left: -4px;
+            transform: rotate(270deg);
+        }
+        &__uparrow{
+            right: -5px;
+            left: inherit;
         }
     }
     .smallBtn{
@@ -167,6 +219,50 @@
                 }
             }
         }
+        &__traningSection{
+            padding: 40px 0 0 0;
+            p{
+                font-size: 18px;
+                line-height: 24px;
+                margin-bottom:15px;
+            }
+            ul{
+                width:380px;
+                margin-top:10px;
+            }
+            li{
+                height: auto;
+                margin-bottom:30px;
+                &:nth-child(2) {
+                    height: auto;
+                    img{
+                        height:auto;
+                        position:static;
+                    }
+                }
+            }
+        }
+        &__traningContent{
+            width:100%;
+            height:auto;
+            p{
+                font-size: 24px;
+                line-height: 30px;
+                margin-left:0;
+                padding:25px 30px 5px 30px;
+            }
+            a{
+                margin-left: 30px;
+            }
+        }
+        &__downarrow, &__uparrow{
+            top: -10px;
+            left: 29px;
+            transform: rotate(0deg);
+            background-position:-820px -300px;
+            width:13px;
+            height:24px;
+        }
     }
     .smallBtn{
         bottom: 10px;
@@ -176,6 +272,16 @@
         &__txt{
             width: 105px;
         }
+    }
+    .heading-1{
+        font-size: 40px;
+        line-height: 45px;
+        margin-bottom: 15px;
+    }
+    .heading-3 {
+        font-size: 24px;
+        line-height: 24px;
+        margin-bottom:20px;
     }
 }
 
@@ -249,6 +355,22 @@
                 margin-right:0;
             }
         }
+        &__traningSection{
+            padding: 20px 0 0 0;
+            p{
+                font-size: 16px;
+                line-height: 20px;
+                br{
+                    display:none;
+                }
+            }
+        }
+        &__traningContent{
+            p{
+                font-size: 24px;
+                line-height: 30px;
+            }
+        }
     }
     .smallBtn{
         bottom: 10px;
@@ -259,5 +381,38 @@
             width: 105px;
         }
     }
+    .heading-1{
+        font-size: 24px;
+        line-height: 36px;
+        margin-bottom: 15px;
+    }
+    .heading-3 {
+        font-size: 18px;
+        line-height: 20px;
+        margin-bottom:25px;
+    }
 
+}
+@media (max-width: 480px) {
+    .home{
+        &__traningSection{
+            width: 100%;
+            ul{
+                width:100%;
+            }
+            li{
+                &:nth-child(2){
+                    img{
+                        width:100%;
+                    }
+                    .home__traningContent{
+                        width:100%;
+                    }
+                }
+            }
+            img{
+                width:100%;
+            }
+        }
+    }
 }

@@ -82,6 +82,7 @@ img {
     color:$white;
     background:$btn-bg;
     border-radius:4px;
+    text-transform: uppercase;
     &__txt{
         float:left;
         width:134px;
@@ -97,6 +98,50 @@ img {
     &:hover{
         color:$white;
     }
+}
+.bigBtn{
+    position:absolute;
+    bottom:-30px;
+    left:50%;
+    width:245px;
+    height:60px;
+    margin-left: -122px;
+    text-align: center;
+    line-height: 60px;
+    font-size:18px;
+    color:$white;
+    background:$red;
+    border-radius:4px;
+    text-transform: uppercase;
+    &__txt{
+        float:left;
+        width:192px;
+    }
+    &__arrow{
+        float:right;
+        width:53px;
+        height:60px;
+        border-radius: 0px 4px 4px 0px;
+        @include sprite;
+        background-position:-512px -8px;
+    }
+    &:hover{
+        color:$white;
+    }
+}
+.heading-1{
+    font-size:60px;
+    line-height:81px;
+    color:$dark-blue;
+    text-align:center;
+    margin-bottom:30px;
+}
+.heading-3{
+    font-size:28px;
+    line-height:24px;
+    color:$dark-blue;
+    text-align:center;
+    margin-bottom:40px;
 }
 /*#loading {
     top: 0;

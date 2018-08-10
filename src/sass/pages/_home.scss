@@ -1,13 +1,55 @@
 .home{
     &__bannerContainer{
         width:100%;
+        position: relative;
+    }
+    &__bannerSlider{
+        .slick-prev, .slick-next{
+            @include sprite;
+            width:55px;
+            height:55px;
+            position:absolute;
+            top:50%;
+            margin-top:-27px;
+            z-index:9;
+            font-size:0;
+            border:0;
+        }
+        .slick-prev{
+            background-position:-100px -20px;
+            left:82px;
+        }
+        .slick-prev.slick-disabled{
+            background-position:-40px -20px;
+            cursor: default;
+        }
+        .slick-next{
+            background-position:-220px -20px;
+            right:82px;
+        }
+        .slick-next.slick-disabled{
+            background-position:-160px -20px;
+            cursor: default;
+        }
+    }
+    &__bannerSection{
+        height:675px;        
     }
     &__bannerSection--banner1{
         background:url('#{$image-path}home/banner-1.jpg') no-repeat top center;
         background-size: cover;
     }
+    &__bannerSection--banner2{
+        background:url('#{$image-path}home/banner-2.jpg') no-repeat top center;
+        background-size: cover;
+    }
     &__bannerContent{
-        padding:40px 0;
+        padding:40px 0 !important;
+        position:absolute;
+        top:0;
+        bottom:0;
+        left:0;
+        right:0;
         h1{
             font-family: $font-bold;
             font-size:55px;
@@ -149,6 +191,11 @@
             color:$white;
             padding: 32px 5px 0 0;
         }
+        a{
+            margin-left:0;
+            position: absolute;
+            bottom: 20px;
+        }
     }
     &__traningSection{
         padding:80px 0 0 0;
@@ -192,11 +239,6 @@
             padding: 52px 30px 25px 30px;
             margin-bottom: 0;
         }
-        a{
-            position:static;
-            float: left;
-            margin-left: 30px;
-        }
     }
     &__downarrow, &__uparrow{
         @include sprite;
@@ -206,6 +248,7 @@
         position: absolute;
         top: -18px;
         left: 29px;
+        z-index:9;
     }
     &__uparrow{
         background-position:-540px -300px;
@@ -217,9 +260,10 @@
         padding:80px 0;
     }
     &__customerSection{
-        width:615px;
+        width:635px;
         margin:0 auto;
-        display:table;
+        display:block;
+        float:left;
         position:relative;
         &::after{
             content: '';
@@ -239,19 +283,19 @@
             position: relative;
             cursor:pointer;
             @include transition(all 0.5s);
-            &:hover .home__profile{
+            &:hover .home__profile, &.slick-active .home__profile{
                 border:5px solid $white;
                 -webkit-filter: grayscale(0);
                 filter: grayscale(0);
                 opacity: 1;
             }
-            &:hover .home__profile::after{
+            &:hover .home__profile::after, &.slick-active .home__profile::after{
                 border: 7px solid rgba(240, 77, 70, 0.5);
             }
-            &:hover .home__youtubeicon{
+            &:hover .home__youtubeicon, &.slick-active .home__youtubeicon{
                 background-position:-680px -300px;
             }
-            &:hover .home__customerTitle{
+            &:hover .home__customerTitle, &.slick-active .home__customerTitle{
                 color:$red;
             }
             p{
@@ -307,10 +351,39 @@
         margin-top:20px;
         margin-left:45px;
         float:left;
+        width: 345px;
+        position:relative;
         li{
             width:345px;
             float:left;
             position:relative;
+        }
+        .slick-prev, .slick-next{
+            @include sprite;
+            width:11px;
+            height:16px;
+            position:absolute;
+            bottom:-40px;
+            right:0;
+            z-index:9;
+            font-size:0;
+            border:0;
+        }
+        .slick-prev{
+            background-position:-200px -400px;
+            right:25px;
+        }
+        .slick-prev.slick-disabled{
+            background-position:-160px -400px;
+            cursor: default;
+        }
+        .slick-next{
+            background-position:-280px -400px;
+            right:0;
+        }
+        .slick-next.slick-disabled{
+            background-position:-240px -400px;
+            cursor: default;
         }
     }
     &__profileVideo{
@@ -327,9 +400,11 @@
         left: 50%;
         margin-left: -27px;
         @include transition(all 0.5s);
+        cursor:pointer;
     }
     &__testimonialContent{
         margin-left: 48px;
+        position: relative;
         p{
             font-size:14px;
             line-height:19px;
@@ -343,8 +418,8 @@
         &::after{
             content:'';
             position:absolute;
-            bottom:-15px;
-            left:0;
+            top: 35px;
+            left: -45px;
             @include sprite;
             background-position:-40px -400px;
             width: 99px;
@@ -356,12 +431,24 @@
         padding:75px 0 135px;
         position:relative;
         background-size: cover;
+        ul{
+            margin-left:21%;
+            float:left;
+        }
+        li{
+            width: 280px;
+            float: left;
+            margin-right: 35px;
+            &:last-child{
+                margin-right:0;
+            }
+        }
     }
     &__driverbg{
         background:url('#{$image-path}home/driver-section.png') no-repeat;
         position:absolute;
-        left:-145px;
-        top:35px;
+        left: -133px;
+        top: 115px;
         width:473px;
         height:424px;
         z-index:1;
